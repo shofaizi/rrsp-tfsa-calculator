@@ -1,6 +1,6 @@
 Dear User,
 
-This application is not run on any server so there is no need for installing dependencies
+This application does not run on any server so there is no need for installing dependencies
 nor is it necessary to configure any settings. Simply open up the index.html file in your browser.
 
 All the JavaScript and CSS is included inside the index.html file.
