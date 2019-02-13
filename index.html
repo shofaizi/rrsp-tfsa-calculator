@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TFSA vs RRSP</title>
+    <link rel="stylesheet" href="./assets/css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <div class='container'>
+        <div class='flex-row center'>
+          <page-header title='TFSA vs RRSP' />
+        </div>
+        <hr>
+
+        <div class='flex-row' id='content'>
+          <!-- Calculator -->
+          <div class='card'>
+            <div class='container'>
+              <div class='card-content'>
+                <input-field
+                  id='marginalTaxRate'
+                  label='Marginal Tax Rate'
+                  symbol='(%)'
+                  placeholder='Eg. 38.29'
+                  class='flex-row'
+                  v-model='marginalTaxRate'>
+                </input-field>
+                <hr>
+                <input-field
+                  id='averageTaxRateInRetirement'
+                  label='Average Tax Rate in Retirement'
+                  symbol='(%)'
+                  placeholder='Eg. 20.64'
+                  class='flex-row'
+                  v-model='averageTaxRateInRetirement'>
+                </input-field>
+                <hr>
+                <input-field
+                  id='deposit'
+                  label='Deposit'
+                  symbol='($)'
+                  placeholder='Eg. 1,000'
+                  class='flex-row'
+                  v-model='deposit'>
+                </input-field>
+                <hr>
+                <input-field
+                  id='investmentPeriod'
+                  label='Investment Period (Years)'
+                  placeholder='Eg. 30'
+                  class='flex-row'
+                  v-model='investmentPeriod'>
+                </input-field>
+                <hr>
+                <input-field
+                  id='returnOnInvestment'
+                  label='Return on Investment'
+                  symbol='(%)'
+                  placeholder='Eg. 6.00'
+                  class='flex-row'
+                  v-model='returnOnInvestment'>
+                </input-field>
+                <hr>
+                <input-field
+                  id='inflationRate'
+                  label='Inflation Rate'
+                  symbol='(%)'
+                  placeholder='Eg. 2.50'
+                  class='flex-row'
+                  v-model='inflationRate'>
+                </input-field>
+                <hr>
+                <br>
+                <button @click='calculateResults'>Calculate</button>
+              </div>
+            </div>
+          </div>
+          <!-- Results -->
+          <results
+            :tfsa=tfsaResults
+            :rrsp=rrspResults>
+          </results>
+        </div>
+        <br>
+        <hr>
+        <ul v-if='errorMessages.length > 0'>
+          <li v-for='error in errorMessages'>{{ error }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script type="text/javascript" src='./assets/js/components/header.js'></script>
+    <script type="text/javascript" src='./assets/js/components/inputField.js'></script>
+    <script type="text/javascript" src='./assets/js/components/note.js'></script>
+    <script type="text/javascript" src='./assets/js/components/results.js'></script>
+    <script src='./index.js'></script>
+  </body>
+</html>
