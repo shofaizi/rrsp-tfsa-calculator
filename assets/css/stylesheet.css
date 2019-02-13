@@ -1,0 +1,103 @@
+
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row;
+}
+
+#header {
+  color: #008579;
+}
+
+/* Parent container needs to have display: flex; enabled */
+.center {
+  justify-content: center
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+label, button, h4, h2, table, span, li {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+  background-color: #f1f1f1;
+  width: 50%;
+  margin: 2% 5% 0 0;
+  padding: 2rem 0 1rem 0;
+}
+
+button {
+  background-color: #008579;
+  float:right;
+  color: white;
+  height: 2rem;
+  padding: 0 1rem 0 1rem;
+  font-size: 1rem;
+}
+
+.label {
+  flex-basis: 20rem;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+th {
+  padding: 1rem 0rem 0rem 0rem;
+}
+
+td {
+  padding: 1rem 0rem 0rem 2rem;
+}
+
+table {
+  width: auto;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.wrap {
+  flex-wrap: wrap
+}
+
+li {
+  list-style: none;
+  color: #ff0000;
+}
+
+.rrspFutureTaxPaid {
+  color: #ff0000;
+}
+
+.totalAfterTax {
+  color: #008579;
+}
+
+/* Media queries */
+@media only screen and (max-width: 1000px) {
+  .card {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .flex-row {
+    justify-content: space-between;
+  }
+
+  #content {
+    flex-wrap: wrap;
+  }
+}
